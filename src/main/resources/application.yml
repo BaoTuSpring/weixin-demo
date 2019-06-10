@@ -1,0 +1,29 @@
+#mysql连接配置文件
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    username: root
+
+mybatis:
+  type-aliases-package: com.zhengqing.demo.domain,com.zhengqing.demo.query
+
+
+
+---
+#多环境测试配置
+spring:
+  profiles:
+    active: dev
+#    active: {spring.profiles.active}
+---
+ spring:
+   profiles: dev
+---
+  spring:
+    profiles: test
+---
+ spring:
+    profiles: prod
+
